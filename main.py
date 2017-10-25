@@ -7,10 +7,13 @@ import pyttsx3 as pt
 
 
 f = pt.init()
-a = "C:/Users/Henrique/Documents/py"
+a = "C:/Users/Henrique/Documents/py" # Local onde se encontra os aqruivos em txt com os dialogos; Este caminho deverá ser alterado para o local onde os txts ficarão
+
 cb = ChatBot('Castellan')
 cb.set_trainer(ListTrainer)
+
 f.setProperty('voice', b'brazil')
+
 for arq in os.listdir(a):
     chats = open(a+"/" + arq, 'r').readlines()
     cb.train(chats)
